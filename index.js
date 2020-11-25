@@ -22,7 +22,6 @@ app.use(router.allowedMethods());
 
 app._io.on('connection', socket => {
     console.log('建立连接了');
-
     // console.log(groupid);
     // 监听客户端连接
     socket.on("addData",function(data){
