@@ -1,5 +1,5 @@
 var Koa = require('koa');
- var router = require('koa-router')();
+var router = require('koa-router')();
 
 
 var url = require('url');
@@ -22,11 +22,11 @@ app.use(router.allowedMethods());
 
 app._io.on('connection', socket => {
     console.log('建立连接了');
-    // console.log(groupid);
+
     // 监听客户端连接
-    socket.on("addData",function(data){
+    socket.on("addData", function (data) {
         console.log(data);
-        socket.broadcast.emit("addInputData",data);
+        socket.broadcast.emit("addInputData", data);
     })
 })
 
